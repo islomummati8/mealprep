@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxfiylik Siyosati - Mealprep & BiteWise</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #202124;
+            --text-secondary: #5f6368;
+            --accent-color: #1a73e8;
+            --border-color: #dadce0;
+            --code-bg: #f1f3f4;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --accent-color: #8ab4f8;
+            --border-color: #3c4043;
+            --code-bg: #2d2d2d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border: 1px solid var(--border-color);
+        }
+
+        .header-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .lang-switcher select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: var(--code-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            background: var(--code-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .update-date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        p, ul {
+            margin-bottom: 18px;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .contact-box {
+            background: var(--code-bg);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent-color);
+            margin-top: 25px;
+        }
+
+        .contact-box a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+<div class="container">
+    <div class="header-controls">
+        <div class="lang-switcher">
+            <label for="languageSelect">🌍 Til / Language / Язык / اللغة: </label>
+            <select id="languageSelect" onchange="changeLanguage(this.value)">
+                <option value="uz" selected>O'zbekcha</option>
+                <option value="en">English</option>
+                <option value="ru">Русский</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Dark / Light</button>
+    </div>
+
+    <!-- CONTENT SECTIONS -->
+    <div id="content">
+        
+        <!-- O'ZBEKCHA -->
+        <div class="lang-section" id="uz">
+            <h1>Maxfiylik Siyosati</h1>
+            <div class="update-date">Oxirgi yangilangan sana: 25-sentabr, 2026-yil</div>
+
+            <p>Ushbu Maxfiylik Siyosati <strong>Mealprep / BiteWise</strong> ("Biz", "Ilova") mobil ilovasi foydalanuvchilarining shaxsiy ma'lumotlarini qanday yig'ishimiz, qayta ishlashimiz, saqlashimiz va himoya qilishimiz tartibini to'liq tushuntiradi. Ilovamizdan foydalanish orqali siz ushbu siyosatda ko'rsatilgan shartlarga rozilik bildirasiz.</p>
+
+            <h2>1. Biz yig'adigan ma'lumotlar turlari</h2>
+            <p>Ilova faoliyati va funksionalligini ta'minlash maqsadida quyidagi ma'lumotlar yig'ilishi mumkin:</p>
+            <ul>
+                <li><strong>Hisob va Identifikatsiya ma'lumotlari:</strong> Ro'yxatdan o'tish yoki Google Sign-In orqali kirish vaqtida taqdim etiladigan elektron pochta (email) manzili va foydalanuvchi nomi.</li>
+                <li><strong>Ilova ichidagi shaxsiy ma'lumotlar:</strong> Ovqatlanish rejalari, retsept afzalliklari, kaloriya hisob-kitoblari va shaxsiy sozlamalar.</li>
+                <li><strong>To'lov va Obuna ma'lumotlari:</strong> Barcha turdagi pullik obunalar va xaridlar Google Play Billing tizimi orqali amalga oshiriladi. Biz sizning bank karta raqamlaringiz, CVV kodlaringiz yoki maxfiy moliyaviy ma'lumotlaringizni o'z serverlarimizda saqlamaymiz.</li>
+                <li><strong>Texnik va Diagnostika ma'lumotlari:</strong> Dastur xatolari (crash logs), ishlash tezligi va qurilma haqidagi umumiy ma'lumotlar Firebase xizmatlari orqali xavfsiz tarzda yig'iladi.</li>
+            </ul>
+
+            <h2>2. Ma'lumotlardan foydalanish maqsadi</h2>
+            <p>To'plangan shaxsiy ma'lumotlar faqat quyidagi qonuniy maqsadlarda foydalaniladi:</p>
+            <ul>
+                <li>Ilovaning asosiy funksiyalarini (rejalashtirish, AI yordamchisi - DeepSeek/Gemini integratsiyasi) ishlatish va taqdim etish.</li>
+                <li>Foydalanuvchi hisobini xavfsiz boshqarish va autentifikatsiyani amalga oshirish.</li>
+                <li>Obuna maqomlarini tekshirish va pullik funksiyalarga ruxsat berish.</li>
+                <li>Ilovani yanada takomillashtirish, xatolarni bartaraf etish va foydalanuvchi tajribasini yaxshilash.</li>
+            </ul>
+
+            <h2>3. Ma'lumotlarni uchinchi shaxslarga bermaslik</h2>
+            <p>Biz sizning shaxsiy ma'lumotlaringizni hech qachon sotmaymiz, ijaraga bermaymiz va uchinchi shaxslarga tijorat maqsadlarida oshkor etmaymiz. Ma'lumotlar faqatgina xavfsiz bulutli infratuzilma (Firebase) va sun'iy intellekt xizmatlari doirasida ilova ishini ta'minlash uchun shifrlangan holda qo'llaniladi.</p>
+
+            <h2>4. Akkaunt va ma'lumotlarni o'chirish tartibi (Account & Data Deletion)</h2>
+            <p>Siz istalgan vaqtda o'z hisobingizni va unga bog'liq barcha ma'lumotlarni to'liq o'chirishni talab qilish huquqiga egasiz. Ma'lumotlarni o'chirish yoki tahrirlash uchun quyidagi rasmiy elektron pochta manzillarimizga to'g'ridan-to'g'ri murojaat qilishingiz mumkin:</p>
+            <ul>
+                <li><a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></li>
+                <li><a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></li>
+            </ul>
+            <p><strong>Muhim eslatma:</strong> Arizangizni olgandan so'ng, qo'llab-quvvatlash xizmati mutaxassislari ma'lumotlaringizni bazadan to'liq o'chirish jarayonini amalga oshiradilar. Ushbu jarayon xavfsizlik va tizim tekshiruvlari sababli <strong>1 kundan 7 kungacha</strong> bo'lgan vaqtni olishi mumkin. Ma'lumotlar to'liq o'chirilgach, bu haqida sizga xabar beriladi.</p>
+
+            <h2>5. Bolalar maxfiyligi</h2>
+            <p>Ilovamiz 13 yoshgacha bo'lgan bolalarga mo'ljallanmagan va biz ular haqida ongli ravishda shaxsiy ma'lumotlar to'plamaymiz.</p>
+
+            <h2>6. Maxfiylik Siyosatiga o'zgartirishlar</h2>
+            <p>Biz ushbu siyosatni vaqti-vaqti bilan yangilab turishimiz mumkin. Har qanday o'zgarishlar ushbu sahifada e'lon qilinadi va yangilangan sana ko'rsatib o'tiladi.</p>
+
+            <h2>7. Bog'lanish uchun ma'lumotlar</h2>
+            <div class="contact-box">
+                <p>Maxfiylik siyosati yoki ilova bo'yicha savollaringiz bo'lsa, biz bilan bog'laning:</p>
+                <p>📧 Email 1: <a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></p>
+                <p>📧 Email 2: <a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- ENGLISH -->
+        <div class="lang-section" id="en" style="display:none;">
+            <h1>Privacy Policy</h1>
+            <div class="update-date">Last updated: September 25, 2026</div>
+
+            <p>This Privacy Policy explains how the <strong>Mealprep / BiteWise</strong> mobile application ("We", "App") collects, uses, stores, and protects user personal data. By using our application, you agree to the terms outlined in this policy.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>To provide core app functionality, we may collect the following data:</p>
+            <ul>
+                <li><strong>Account Data:</strong> Email address and username provided during registration or Google Sign-In.</li>
+                <li><strong>App-specific Data:</strong> Meal plans, recipe preferences, calorie goals, and user configurations.</li>
+                <li><strong>Billing Data:</strong> All subscriptions and purchases are securely handled via Google Play Billing. We do not store your credit card numbers or sensitive financial data on our servers.</li>
+                <li><strong>Diagnostics Data:</strong> Crash logs and performance diagnostics collected securely via Firebase services.</li>
+            </ul>
+
+            <h2>2. How We Use Information</h2>
+            <p>Collected data is used solely for the following legal purposes:</p>
+            <ul>
+                <li>To operate and provide core app features (meal planning, AI assistant integration via DeepSeek/Gemini).</li>
+                <li>To manage user accounts and secure authentication.</li>
+                <li>To verify subscription status and unlock premium features.</li>
+                <li>To improve application performance and user experience.</li>
+            </ul>
+
+            <h2>3. Data Sharing and Disclosure</h2>
+            <p>We do not sell, trade, or rent your personal data to third parties. Information is processed securely within cloud infrastructure (Firebase) strictly to ensure app operation.</p>
+
+            <h2>4. Account and Data Deletion Policy</h2>
+            <p>You have the right to request the complete deletion of your account and associated data at any time. To request data deletion, please contact our support team via email:</p>
+            <ul>
+                <li><a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></li>
+                <li><a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></li>
+            </ul>
+            <p><strong>Important Note:</strong> Once your request is received, our support team will manually process the complete removal of your data. Due to security verifications, this process takes between <strong>1 to 7 business days</strong>.</p>
+
+            <h2>5. Children's Privacy</h2>
+            <p>Our application is not directed to children under 13, and we do not knowingly collect personal data from them.</p>
+
+            <h2>6. Contact Us</h2>
+            <div class="contact-box">
+                <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
+                <p>📧 Email 1: <a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></p>
+                <p>📧 Email 2: <a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- RUSSIAN -->
+        <div class="lang-section" id="ru" style="display:none;">
+            <h1>Политика конфиденциальности</h1>
+            <div class="update-date">Последнее обновление: 25 сентября 2026 г.</div>
+
+            <p>Настоящая Политика конфиденциальности описывает, как мобильное приложение <strong>Mealprep / BiteWise</strong> («Мы», «Приложение») собирает, использует, хранит и защищает персональные данные пользователей. Используя наше приложение, вы соглашаетесь с условиями данной политики.</p>
+
+            <h2>1. Какую информацию мы собираем</h2>
+            <p>Для обеспечения работы приложения могут собираться следующие данные:</p>
+            <ul>
+                <li><strong>Данные аккаунта:</strong> Адрес электронной почты и имя пользователя, предоставляемые при регистрации или входе через Google Sign-In.</li>
+                <li><strong>Данные внутри приложения:</strong> Планы питания, рецепты, цели по калориям и личные настройки.</li>
+                <li><strong>Платежные данные:</strong> Все покупки и подписки обрабатываются через Google Play Billing. Мы не храним номера банковских карт или конфиденциальные финансовые данные.</li>
+                <li><strong>Диагностические данные:</strong> Отчеты о сбоях и производительности, собираемые через Firebase.</li>
+            </ul>
+
+            <h2>2. Как мы используем информацию</h2>
+            <p>Собранные данные используются исключительно для следующих целей:</p>
+            <ul>
+                <li>Предоставление основных функций приложения (планирование питания, интеграция с ИИ DeepSeek/Gemini).</li>
+                <li>Безопасная аутентификация и управление учетной записью.</li>
+                <li>Проверка статуса подписки и активация премиум-функций.</li>
+                <li>Улучшение производительности приложения и пользовательского опыта.</li>
+            </ul>
+
+            <h2>3. Передача данных третьим лицам</h2>
+            <p>Мы не продаем, не передаем и не сдаем в аренду ваши персональные данные третьим лицам. Данные обрабатываются защищенным образом в инфраструктуре Firebase исключительно для работы приложения.</p>
+
+            <h2>4. Удаление аккаунта и данных (Account & Data Deletion)</h2>
+            <p>Вы имеете право запросить полное удаление вашей учетной записи и связанных данных в любое время. Для этого отправьте запрос на наши официальные адреса электронной почты:</p>
+            <ul>
+                <li><a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></li>
+                <li><a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></li>
+            </ul>
+            <p><strong>Важное примечание:</strong> После получения вашего запроса наша служба поддержки вручную обработает удаление данных из базы. Процесс может занять от <strong>1 до 7 рабочих дней</strong> по соображениям безопасности.</p>
+
+            <h2>5. Контакты</h2>
+            <div class="contact-box">
+                <p>Если у вас есть вопросы по поводу политики конфиденциальности, свяжитесь с нами:</p>
+                <p>📧 Email 1: <a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></p>
+                <p>📧 Email 2: <a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- ARABIC -->
+        <div class="lang-section" id="ar" style="display:none; direction: rtl; text-align: right;">
+            <h1>سياسة الخصوصية</h1>
+            <div class="update-date">آخر تحديث: 25 سبتمبر 2026</div>
+
+            <p>توضح سياسة الخصوصية هذه كيف يقوم تطبيق <strong>Mealprep / BiteWise</strong> بجمع واستخدام وتخزين وحماية البيانات الشخصية للمستخدمين. باستخدامك لتطبيقنا، فإنك توافق على الشروط الواردة في هذه السياسة.</p>
+
+            <h2>1. المعلومات التي نجمعها</h2>
+            <p>لتوفير وظائف التطبيق الأساسية، قد نجمع البيانات التالية:</p>
+            <ul>
+                <li><strong>بيانات الحساب:</strong> عنوان البريد الإلكتروني واسم المستخدم المقدم أثناء التسجيل أو تسجيل الدخول عبر Google.</li>
+                <li><strong>بيانات التطبيق:</strong> خطط الوجبات، تفضيلات الوصفات، أهداف السعرات الحرارية، والإعدادات الشخصية.</li>
+                <li><strong>بيانات الدفع:</strong> تتم معالجة جميع الاشتراكات والمشتريات بأمان عبر Google Play Billing. نحن لا نقوم بتخزين أرقام بطاقتك الائتمانية على خوادمنا.</li>
+            </ul>
+
+            <h2>2. كيفية استخدام المعلومات</h2>
+            <p>تُستخدم البيانات المجمعة للأغراض التالية فقط:</p>
+            <ul>
+                <li>تشغيل وتوفير ميزات التطبيق الأساسية (تخطيط الوجبات، تكامل الذكاء الاصطناعي).</li>
+                <li>إدارة حسابات المستخدمين والمصادقة الآمنة.</li>
+                <li>التحقق من حالة الاشتراكات.</li>
+            </ul>
+
+            <h2>3. سياسة حذف الحساب والبيانات</h2>
+            <p>يحق لك طلب الحذف الكامل لحسابك والبيانات المرتبطة به في أي وقت. لطلب حذف البيانات، يرجى مراسلتنا عبر البريد الإلكتروني:</p>
+            <ul>
+                <li><a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></li>
+                <li><a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></li>
+            </ul>
+            <p><strong>ملاحظة هامة:</strong> بمجرد استلام طلبك، سيقوم فريق الدعم لدينا بمعالجة وإزالة بياناتك يدوياً من قاعدة البيانات. نظراً لعمليات التحقق الأمني، تستغرق هذه العملية ما بين <strong>1 إلى 7 أيام عمل</strong>.</p>
+
+            <h2>4. اتصل بنا</h2>
+            <div class="contact-box">
+                <p>إذا كانت لديك أي أسئلة بخصوص سياسة الخصوصية، يرجى الاتصال بنا عبر:</p>
+                <p>📧 البريد 1: <a href="mailto:islamtalimi571@gmail.com">islamtalimi571@gmail.com</a></p>
+                <p>📧 البريد 2: <a href="mailto:safemediaosupport@gmail.com">safemediaosupport@gmail.com</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function changeLanguage(lang) {
+        const sections = document.querySelectorAll('.lang-section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        document.getElementById(lang).style.display = 'block';
+    }
+
+    function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute('data-theme');
+        body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+    }
+</script>
+
+</body>
+</html>

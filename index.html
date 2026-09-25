@@ -168,8 +168,15 @@
             <ul>
                 <li><strong>Hisob va Identifikatsiya ma'lumotlari:</strong> Ro'yxatdan o'tish yoki Google Sign-In orqali kirish vaqtida taqdim etiladigan elektron pochta (email) manzili va foydalanuvchi nomi.</li>
                 <li><strong>Ilova ichidagi shaxsiy ma'lumotlar:</strong> Ovqatlanish rejalari, retsept afzalliklari, kaloriya hisob-kitoblari va shaxsiy sozlamalar.</li>
-                <li><strong>Taxminiy joylashuv ma'lumotlari:</strong> Mintaqangizga mos taomlar va retseptlarni tavsiya qilish maqsadida taxminiy joylashuv ma'lumotlari (shahar yoki mintaqa darajasida) ishlatiladi. Aniq GPS koordinatalari yig'ilmaydi.</li>
-                <li><strong>Media, Ovoz va Fayllar:</strong> Sun'iy intellekt (AI) yordamchisi bilan muloqot qilish, tahlil qilish va retseptlar yaratish uchun foydalanuvchi yuklagan rasmlar, ovozli xabarlar (audio yozuvlar) va fayllar vaqtincha qayta ishlanadi.</li>
+                <li><strong>Taxminiy joylashuv ma'lumotlari (Approximate Location):</strong> Ilovada aniq GPS koordinatalari yig'ilmaydi. Faqatgina mintaqangizga (shahar yoki hudud darajasida) mos keladigan mahalliy taomlar, mahsulotlar va retseptlarni to'g'ri tavsiya qilish maqsadida <strong>taxminiy joylashuv</strong> ma'lumotlaridan foydalaniladi.</li>
+                <li><strong>Media, Ovoz, Fayllar va AI muloqoti:</strong> Sun'iy intellekt (AI) yordamchisi bilan ishlash jarayonida quyidagi imkoniyatlar taqdim etiladi:
+                    <ul>
+                        <li><strong>Rasm yuklash:</strong> Ovqatlarni tahlil qilish yoki retsept izlash uchun foydalanuvchi tomonidan yuklangan rasmlar.</li>
+                        <li><strong>Audio va Ovozli xabarlar:</strong> AI yordamchisiga ovoz orqali murojaat qilish va matnli savollarni ovozli yozib yuborish uchun audio ma'lumotlar.</li>
+                        <li><strong>Fayllar yuborish:</strong> Retseptlar, hujjatlar yoki kerakli qo'shimcha fayllarni AI ga yuborish imkoniyati.</li>
+                    </ul>
+                    Ushbu media, ovoz va fayllar faqat so'rovni tahlil qilish va javob berish uchun vaqtincha qayta ishlanadi.
+                </li>
                 <li><strong>To'lov va Obuna ma'lumotlari:</strong> Barcha turdagi pullik obunalar va xaridlar Google Play Billing tizimi orqali amalga oshiriladi. Biz sizning bank karta raqamlaringizni o'z serverlarimizda saqlamaymiz.</li>
                 <li><strong>Texnik va Diagnostika ma'lumotlari:</strong> Dastur xatolari (crash logs) va ishlash tezligi Firebase xizmatlari orqali xavfsiz tarzda yig'iladi.</li>
             </ul>
@@ -177,7 +184,8 @@
             <h2>2. Ma'lumotlardan foydalanish maqsadi</h2>
             <p>To'plangan shaxsiy ma'lumotlar faqat quyidagi qonuniy maqsadlarda foydalaniladi:</p>
             <ul>
-                <li>Ilovaning asosiy funksiyalarini (rejalashtirish, AI yordamchisi - DeepSeek/Gemini integratsiyasi, ovozli va rasm yuborish) ishlatish va taqdim etish.</li>
+                <li>Ilovaning asosiy funksiyalarini (rejalashtirish, AI yordamchisi - DeepSeek/Gemini integratsiyasi, ovozli xabarlar, rasm va fayllarni tahlil qilish) taqdim etish.</li>
+                <li>Foydalanuvchining mintaqasiga mos keladigan taomlar va retseptlarni taxminiy joylashuv asosida tanlab berish.</li>
                 <li>Foydalanuvchi hisobini xavfsiz boshqarish va autentifikatsiyani amalga oshirish.</li>
                 <li>Obuna maqomlarini tekshirish va pullik funksiyalarga ruxsat berish.</li>
                 <li>Ilovani yanada takomillashtirish va xatolarni bartaraf etish.</li>
@@ -219,14 +227,21 @@
             <ul>
                 <li><strong>Account Data:</strong> Email address and username provided during registration or Google Sign-In.</li>
                 <li><strong>App Data:</strong> Meal plans, recipe preferences, and user configurations.</li>
-                <li><strong>Approximate Location:</strong> Used to provide region-specific meal recommendations. Precise GPS coordinates are not collected.</li>
-                <li><strong>Media, Voice, and Files:</strong> Photos, voice messages, and files uploaded to interact with the AI assistant are processed securely and temporarily.</li>
+                <li><strong>Approximate Location:</strong> We do not collect precise GPS coordinates. Approximate location (city or region level) is used exclusively to recommend region-specific dishes and recipes.</li>
+                <li><strong>Media, Voice, Files & AI Interaction:</strong> While interacting with the AI assistant, users can:
+                    <ul>
+                        <li><strong>Upload Images:</strong> For analyzing food or recipes.</li>
+                        <li><strong>Audio/Voice Messages:</strong> To record and send voice prompts to the AI.</li>
+                        <li><strong>Upload Files:</strong> To share recipes or documents with the AI.</li>
+                    </ul>
+                    These files and voice records are processed temporarily to fulfill your requests.
+                </li>
                 <li><strong>Billing Data:</strong> Handled securely via Google Play Billing.</li>
                 <li><strong>Diagnostics:</strong> Crash logs collected via Firebase services.</li>
             </ul>
 
             <h2>2. How We Use Information</h2>
-            <p>Data is used to operate core features (meal planning, AI assistant integration, voice/image processing), manage accounts, verify subscriptions, and improve app performance.</p>
+            <p>Data is used to operate core features (meal planning, AI assistant integration supporting voice, images, and files), provide region-based food recommendations, manage accounts, verify subscriptions, and improve app performance.</p>
 
             <h2>3. Data Sharing</h2>
             <p>We do not sell personal data. Information is processed securely within Firebase and AI cloud services solely for app functionality.</p>
@@ -257,14 +272,21 @@
             <ul>
                 <li><strong>Данные аккаунта:</strong> Email и имя пользователя при входе через Google Sign-In.</li>
                 <li><strong>Данные приложения:</strong> Планы питания, цели и настройки.</li>
-                <li><strong>Приблизительное местоположение:</strong> Используется для рекомендаций блюд по регионам (без точных координат GPS).</li>
-                <li><strong>Медиа, голос и файлы:</strong> Фотографии, голосовые сообщения и файлы, отправляемые ИИ-ассистенту, обрабатываются временно.</li>
+                <li><strong>Приблизительное местоположение (Approximate Location):</strong> Мы не собираем точные координаты GPS. Приблизительное местоположение (на уровне города или региона) используется исключительно для рекомендации блюд и рецептов, соответствующих вашему региону.</li>
+                <li><strong>Медиа, голос, файлы и взаимодействие с ИИ:</strong> При общении с ИИ-ассистентом вы можете:
+                    <ul>
+                        <li><strong>Загружать изображения:</strong> Для анализа блюд и рецептов.</li>
+                        <li><strong>Голосовые сообщения (Аудио):</strong> Для отправки голосовых запросов ассистенту.</li>
+                        <li><strong>Отправлять файлы:</strong> Документы или рецепты для обработки ИИ.</li>
+                    </ul>
+                    Эти данные обрабатываются временно для выполнения ваших запросов.
+                </li>
                 <li><strong>Платежные данные:</strong> Обрабатываются через Google Play Billing.</li>
                 <li><strong>Диагностика:</strong> Отчеты о сбоях через Firebase.</li>
             </ul>
 
             <h2>2. Как мы используем информацию</h2>
-            <p>Для обеспечения работы функций приложения (ИИ, планирование питания), управления аккаунтом и улучшения сервиса.</p>
+            <p>Для обеспечения работы функций приложения (планирование питания, ИИ-помощник с поддержкой аудио, картинок и файлов), региональных рекомендаций блюд, управления аккаунтом и улучшения сервиса.</p>
 
             <h2>3. Удаление данных</h2>
             <p>Вы можете запросить удаление данных, написав на почту:</p>
@@ -290,8 +312,15 @@
             <ul>
                 <li><strong>بيانات الحساب:</strong> البريد الإلكتروني واسم المستخدم.</li>
                 <li><strong>بيانات التطبيق:</strong> خطط الوجبات والإعدادات.</li>
-                <li><strong>الموقع التقريبي:</strong> يُستخدم لتقديم توصيات الوجبات حسب المنطقة (بدون تتبع نظام تحديد الموقع GPS الدقيق).</li>
-                <li><strong>الوسائط والصوت والملفات:</strong> الصور الرسائل الصوتية والملفات المرسلة إلى مساعد الذكاء الاصطناعي تتم معالجتها مؤقتاً.</li>
+                <li><strong>الموقع التقريبي (Approximate Location):</strong> لا نجمع إحداثيات نظام تحديد المواقع (GPS) الدقيقة. يتم استخدام الموقع التقريبي (على مستوى المدينة أو المنطقة) حصرياً لتقديم توصيات بالأطباق والوصفات المناسبة لمنطقتك.</li>
+                <li><strong>الوسائط، الصوت، الملفات والتفاعل مع الذكاء الاصطناعي:</strong> عند التفاعل مع مساعد الذكاء الاصطناعي، يمكنك:
+                    <ul>
+                        <li><strong>تحميل الصور:</strong> لتحليل الأطعمة أو الوصفات.</li>
+                        <li><strong>الرسائل الصوتية (Audio):</strong> لإرسال طلبات صوتية للمساعد.</li>
+                        <li><strong>إرسال الملفات:</strong> لمشاركة الوصفات أو المستندات مع الذكاء الاصطناعي.</li>
+                    </ul>
+                    تتم معالجة هذه الملفات والتسجيلات الصوتية مؤقتاً لتنفيذ طلباتك.
+                </li>
                 <li><strong>بيانات الدفع:</strong> عبر Google Play Billing.</li>
             </ul>
 
